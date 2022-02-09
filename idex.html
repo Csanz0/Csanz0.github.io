@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="¿Tienes problemas para organizar tus fechas? Utiliza esta Aplicacion web"
+    />
+    <title>Date Task App web</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="container">
+      <div class="container__title">
+        <h1>Date Task App</h1>
+      </div>
+      <div class="container__btn">
+        <button id="btn">Oscuro</button>
+      </div>
+    </header>
+    <main data-dark>
+      <div class="container-fluid --form" data-dark>
+        <form id="dateForm">
+          <div class="form-group">
+            <label for="title">Ingrese nombre del evento</label>
+            <input
+              type="text"
+              name="event"
+              id="title"
+              placeholder="Evento"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Ingrese una descripción del evento</label>
+            <textarea
+              id="description"
+              cols="20"
+              rows="10"
+              placeholder="Descripción"
+              required
+              data-dark
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="dateInfo">Ingrese la fecha del evento</label>
+            <input type="date" id="dateInfo" required />
+          </div>
+          <div class="form-group"><input type="submit" value="Añadir" /></div>
+        </form>
+      </div>
+      <div class="container-dates">
+        <div class="container-fluid --date" id="container-dates"></div>
+      </div>
+    </main>
+    <footer class="container__footer" data-dark>
+      <p>Realizado por:</p>
+      <p><strong>CSanz</strong></p>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

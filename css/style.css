@@ -1,0 +1,167 @@
+:root {
+  --bgColor: rgb(0, 60, 255);
+  --bgSecondColor: rgba(98, 102, 104, 0.918);
+  --bgDarkColor: #000;
+  --ContainerBgColor: #77fff8;
+  --size: 1.4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+/* container Styles */
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.2em;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background: var(--bgColor);
+  height: 10vh;
+}
+.container__title {
+  margin: 0.5em auto;
+  font-size: var(--size);
+  flex: 1 1 auto;
+  color: #fff;
+}
+.container__btn {
+  margin: 0.5em auto;
+}
+.container__btn button {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px 5px;
+  background: var(--ContainerBgColor);
+}
+.container__btn button:hover {
+  transition: all 0.3s ease;
+  background: rgba(131, 248, 242, 0.897);
+}
+button.dark {
+  background: rgba(47, 96, 187, 0.603);
+  transition: all 0.5s ease;
+  color: #fff;
+}
+/* main styles */
+main {
+  width: 100vw;
+  background: #fff8f8;
+  display: flex;
+  flex-flow: column wrap;
+  padding-top: 0;
+  align-items: center;
+  padding-top: 0.5em;
+  min-height: 90vh;
+  transition: all 0.5s ease;
+}
+main.dark {
+  background: var(--bgSecondColor);
+  color: #fff;
+}
+.container-fluid.--form {
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-fluid.--date {
+  padding: 2em 5.2em;
+  width: 100%;
+  margin: 0.5em auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 4em;
+}
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 0.5em;
+  font-size: var(--size);
+}
+.form-group input,
+textarea {
+  padding: 0.5em 0.5em;
+  border-radius: 5px 0 5px;
+  border: none;
+  background: rgba(219, 237, 255, 0.719);
+  font-size: 1rem;
+  flex: 1 1 auto;
+}
+.container-fluid.--form.dark .form-group input,
+textarea.dark {
+  background: rgba(255, 255, 255, 0.794);
+}
+
+.form-group input[type="submit"] {
+  flex: 1 1 auto;
+}
+.form-group input[type="submit"]:hover {
+  background: rgb(168, 250, 253);
+  transition: all 0.3s ease;
+}
+/* Container dates styles */
+
+.container-dates-content {
+  border: 1px solid #000;
+  padding: 0.5em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/* dark mode container date*/
+.container-dates-content.dark {
+  border: 1px solid #fff;
+}
+.container-dates {
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 10vh;
+  gap: 0.5em;
+  font-size: 1.3rem;
+}
+/* btn styles */
+.btn-remove {
+  color: #fff;
+  text-align: center;
+  align-self: center;
+  width: 100%;
+  background: rgb(255, 56, 56);
+  transition: all 0.3s ease;
+}
+.btn-remove:hover {
+  background: rgb(255, 22, 22);
+}
+
+/* footer styles */
+.container__footer {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding-left: 2em;
+  background: var(--bgSecondColor);
+}
+.container__footer.dark {
+  background: #f0f0f0;
+}
+.container__footer p {
+  flex: 1 1 auto;
+  font-size: var(--size);
+}
