@@ -14,16 +14,15 @@
 }
 
 body {
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 /* container Styles */
 .container {
   display: flex;
-  flex-flow: column wrap;
-  gap: 0.2em;
-  width: 100vw;
-  justify-content: center;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: space-around;
   align-items: center;
   background: var(--bgColor);
   height: 10vh;
@@ -35,7 +34,8 @@ body {
   color: #fff;
 }
 .container__btn {
-  margin: 0.5em auto;
+  margin: 0.5em 0.5em;
+  flex: 0 1 auto;
 }
 .container__btn button {
   width: 100%;
@@ -122,8 +122,9 @@ textarea.dark {
   border: 1px solid #000;
   padding: 0.5em;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
 }
 /* dark mode container date*/
 .container-dates-content.dark {
@@ -164,4 +165,13 @@ textarea.dark {
 .container__footer p {
   flex: 1 1 auto;
   font-size: var(--size);
+}
+
+@media screen and (max-width: 405px) {
+  .container {
+    height: 100%;
+  }
+  html {
+    font-size: 10px;
+  }
 }

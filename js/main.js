@@ -3,15 +3,57 @@ const d = document,
 
 let now = new Date().getTime();
 const days = 1000 * 60 * 60 * 24;
+const btn = d.getElementById("btn");
+
+d.addEventListener("DOMContentLoaded", () => {
+  if (storage.getItem("theme") == null) storage.setItem("theme", "light");
+  if (storage.getItem("theme") == "dark") dark();
+  if (storage.getItem("theme") == "light") light();
+});
+btn.addEventListener("click", changeColor);
+// Dark theme
+
+function changeColor() {
+  if (!btn.classList.contains("dark")) {
+    dark();
+  } else {
+    light();
+  }
+}
+const dark = () => {
+  let dataDarks = d.querySelectorAll("[data-dark]");
+  btn.classList.add("dark");
+  dataDarks.forEach((el) => {
+    if (!el.classList.contains("dark")) {
+      el.classList.add("dark");
+    }
+  });
+  storage.setItem("theme", "dark");
+};
+const light = () => {
+  let dataDarks = d.querySelectorAll("[data-dark]");
+  btn.classList.remove("dark");
+  dataDarks.forEach((el) => {
+    if (el.classList.contains("dark")) {
+      el.classList.remove("dark");
+    }
+  });
+  storage.setItem("theme", "light");
+};
 
 d.getElementById("dateForm").addEventListener("submit", addEvent);
 // adding the events to the localStorage
 function addEvent(e) {
   let eventName = d.getElementById("title").value;
   let description = d.getElementById("description").value;
+
   let dateInput = Math.floor(
     (new Date(d.getElementById("dateInfo").value).getTime() - now) / days
   );
+
+  if (dateInput < 0) {
+    dateInput = 0;
+  }
 
   e.preventDefault();
   const eventContents = {
@@ -62,43 +104,8 @@ function removeDate(title) {
   }
 
   storage.setItem("events", JSON.stringify(events));
+
   showEvent();
 }
 
 removeDate();
-// Dark theme
-const btn = d.getElementById("btn");
-btn.addEventListener("click", changeColor);
-
-function changeColor() {
-  if (!btn.classList.contains("dark")) {
-    dark();
-  } else {
-    light();
-  }
-}
-const dark = () => {
-  let dataDarks = d.querySelectorAll("[data-dark]");
-  btn.classList.add("dark");
-  dataDarks.forEach((el) => {
-    if (!el.classList.contains("dark")) {
-      el.classList.add("dark");
-    }
-  });
-  storage.setItem("theme", "dark");
-};
-const light = () => {
-  let dataDarks = d.querySelectorAll("[data-dark]");
-  btn.classList.remove("dark");
-  dataDarks.forEach((el) => {
-    if (el.classList.contains("dark")) {
-      el.classList.remove("dark");
-    }
-  });
-  storage.setItem("theme", "light");
-};
-d.addEventListener("DOMContentLoaded", (e) => {
-  if (storage.getItem("theme") == null) storage.setItem("theme", "light");
-  if (storage.getItem("theme") == "dark") dark();
-  if (storage.getItem("theme") == "light") light();
-});
