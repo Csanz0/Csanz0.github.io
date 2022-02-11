@@ -3,6 +3,7 @@ const d = document,
 
 let now = new Date().getTime();
 const days = 1000 * 60 * 60 * 24;
+
 const btn = d.getElementById("btn");
 
 d.addEventListener("DOMContentLoaded", () => {
@@ -47,10 +48,10 @@ function addEvent(e) {
   let eventName = d.getElementById("title").value;
   let description = d.getElementById("description").value;
 
-  let dateInput = Math.floor(
+  let dateInput = Math.ceil(
     (new Date(d.getElementById("dateInfo").value).getTime() - now) / days
   );
-
+  console.log(dateInput);
   if (dateInput < 0) {
     dateInput = 0;
   }
@@ -65,6 +66,7 @@ function addEvent(e) {
     let events = [];
     events.push(eventContents);
     storage.setItem("events", JSON.stringify(events));
+    console.log(eventContents.dateInput);
   } else {
     let events = JSON.parse(storage.getItem("events"));
     events.push(eventContents);
