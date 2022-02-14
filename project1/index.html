@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary to Decimal</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <input type="text" id="show" placeholder="0" value="0" readonly />
+      </div>
+      <div class="container">
+        <form id="form">
+          <div class="container__number">
+            <label for="number">Ingrese un numero</label>
+            <input
+              type="number"
+              id="number"
+              placeholder="0"
+              value="0"
+              required
+            />
+          </div>
+          <div class="container__number">
+            <label for="selection">Seleccione el tipo de conversion</label>
+            <select id="slt">
+              <option value="2">Binario</option>
+              <option value="10">Decimal</option>
+            </select>
+          </div>
+          <button type="submit" id="btn">Calcular</button>
+        </form>
+      </div>
+    </main>
+    <script src="./javascript/main.js"></script>
+  </body>
+</html>
