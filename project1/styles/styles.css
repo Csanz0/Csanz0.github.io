@@ -7,12 +7,13 @@
 
 body {
   width: 100%;
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   background: rgb(140, 161, 195);
 }
+
 main {
   margin-top: 15em;
   display: flex;
