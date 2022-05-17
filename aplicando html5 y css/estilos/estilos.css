@@ -1,0 +1,315 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:monospace, sans-serif, arial;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing: border-box;
+    color: #fff;
+
+}
+
+body{
+    width     : 100%;
+    background: rgba(70,90,110);
+    text-align: center;
+}
+
+header{
+    display: inline-block;
+    margin : 0.3% 0 0.5% 0;
+    width  : 100%;
+
+}
+
+header h1{
+    font-size:300%;
+    float    : left;
+    width    : 30%;
+    color    : #000;
+}
+
+.cabecera{
+    background: #CCC;
+    margin: .5% auto;
+    padding: 1% 0.5%;
+    }
+.nav{
+    background:#98a0a9;
+    display   : block;
+    width     : 70%;
+    margin    :0.5% auto;
+    padding   : 0% 0% 1%;
+    float     :left;
+}
+
+.nav  ul{
+       list-style-type:none; 
+}
+
+.menu > li{
+    position: relative;
+    display : inline-block;
+    padding : 0.5% 2%;
+    margin  : 0% 0%;
+}
+
+.menu > li > a{
+    display        : block;
+    text-decoration:none;
+    padding        : 1.5% 3%;
+}
+
+.menu li a:hover{
+    background: rgba(200,100,90,0.5);
+    transition: all 0.50s;
+}
+
+.submenu{
+    position: absolute;
+    background:rgba(100,200,200,0.5);
+    width: 100%;
+    display: none;
+
+}
+
+.submenu li a{
+    display: block;
+    padding: 1.5%;
+    color: #ff0;
+    text-decoration: none;
+}
+
+.menu li:hover .submenu{
+    display: block;
+}
+
+
+.imagen{
+    margin: 1% auto;
+    padding: 1% auto;
+    background: none;
+    clear: both;
+}
+
+.imagen p{
+    font-size: 200%;
+    color:#fff ;
+}
+
+.img{
+    width:70% ;height:auto; 
+   
+}
+
+
+ .select .articles{
+    width: 68.5%;
+    margin: 0% .5% 0% 0%;
+     background:#1c4954 ;
+    padding:0% 0% 0%;
+    float: left;
+}
+
+
+
+
+.articles> article{
+    margin: 5% 1%;
+    background: #13606c;
+    border-radius:40px;
+    padding: 0% 10% 10% 0%;
+    text-align: left;
+    font-size: 150%;
+
+}
+
+.select >article >p,h2 {
+    margin: 0.5% 0% 0% 0%;
+    padding: 2%;
+}
+
+
+.img2{
+    margin: 1%;
+}
+
+.logo{
+    width:15% ;height:auto; 
+    padding: 3% 1%;
+    margin: 0% 1%;
+    float: left;
+}
+
+.box{
+    width: 30%;
+    margin: 0.2%;
+    display: block;
+    float: left;
+
+}
+
+.caja{
+    width: 100%;
+    padding: 1%;
+    margin:1%;
+    background: none;
+    border-radius: 5%;
+    border: 1px solid;
+    box-shadow:3px -2px 4px #0a2c74 ;
+    display:block;
+    
+}
+
+.caja >h2{
+    font-weight:1000;
+    color: #fff;
+}
+
+.caja label{
+    color: #fff;
+}
+
+.caja input[type = "text"],input[type = "email"],input[type = "password"]{
+    border: 0;
+    background: none; 
+    display: block;
+    margin: 3% auto;
+    text-align: center;
+    box-sizing: border-box;
+    border: 2px solid #02c6ed;
+    padding: 1.5% 1%;
+    width: 39%;
+    outline: none;
+    border-radius:20px;
+    transition:0.3s;
+
+}
+
+.caja input[type = "text"]:focus,input[type = "email"]:focus,input[type = "password"]:focus{
+    background: rgba(0,0,112,0.5);
+    width:47%; 
+    
+}
+
+.caja input[type = "submit"],input[type = "date"]{
+    border: 0;
+    background: none; 
+    display: inline-block;
+    margin: 3% auto;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #00c14d;
+    padding: 1.5% 1%;
+    width: 39%;
+    outline: none;
+    border-radius:20px;
+    transition:0.9s;
+}
+
+.caja input[type = "submit"]:hover{
+    background:#2a3669;
+    
+}
+
+.sec {
+    width:99%;
+    clear: both;
+    float: left;
+    background:#1c4954;
+    padding: 0% 10%;
+    margin: 0.5% 0%;
+    border-top: 1px solid #1c4954; 
+}
+
+.colum{
+    width:30%;
+    margin:0.5% 10px;
+    padding:1% 0% 0% 0%;
+    background:none;
+    box-shadow: 1px -1px 5px #0d40af;
+    border: solid 1px #13606c;
+    display: block;
+    float: right;
+}
+
+.colum > p{
+    display: block;
+    font-size: 150%;
+    padding: 5%;
+    text-shadow: -5px 1px 13px rgba(0,100,255);
+}
+.colum >a{
+    display:block;
+    font-size:120% ;
+    text-decoration: none;  
+    color:#FEC;
+    margin: 1%;
+    padding: 1% 5%; 
+    transition: 1s;
+  
+}
+
+.colum a:hover{
+    border-radius: 50px 50px;
+    background: rgba(0,200,200);
+
+}
+
+.pie{
+    background:none;
+    width:30%;
+    padding: 1% 0% 0% 0%;
+    margin: 0.5% 10%;
+    display: block;
+    float: right;
+    
+}
+
+
+.pie > table{
+    display: block;;
+    background: none;
+    font-size: 120%;
+    margin: 5% auto;
+    padding: auto 5%;
+    border-collapse: collapse;
+    
+}
+
+.tablas a{
+    display: block;
+    text-decoration: none;
+    transition:0.8s;
+    margin: 10% auto auto;
+    padding: 1% auto;
+    
+}
+
+.tablas a:hover{
+    background:#260c6e;
+}
+
+
+.tablas th{
+    border-top: 1px solid #000
+}
+
+.tablas  td,th{
+    border-right: 1px solid #000;
+    border-left:1px solid #000;
+    padding: 0.5%;
+    margin: 0.5%;
+    color:#fff;
+
+}
+
+
+.fo{
+    display: block;
+    border-top:solid 5px rgba(200,0,0,0.5);
+    margin:1% 0% 0% 0%;
+    padding: 1.5%;
+    background: #13606c;
+    clear: both;
+}
