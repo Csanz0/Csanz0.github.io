@@ -9,19 +9,26 @@
       content="¿Tienes problemas para organizar tus fechas? Utiliza esta Aplicacion web"
     />
     <title>Date Task App web</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- <link rel="stylesheet" href="./css/style.css" />  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
   </head>
+
   <body>
-    <header class="container">
-      <div class="container__title">
-        <h1>Date Task App</h1>
+    <header class="container-fluid bg-primary">
+      <div class="container">
+        <h1 class="h1">Date Task App</h1>
       </div>
-      <div class="container__btn">
-        <button id="btn">Oscuro</button>
+      <div class="container-lg">
+        <button id="btn" class="btn btn-sm btn-dark">Oscuro</button>
       </div>
     </header>
     <main data-dark>
-      <div class="container-fluid --form" data-dark>
+      <div class="container-fluid bg-se" data-dark>
         <form id="dateForm">
           <div class="form-group">
             <label for="title">Ingrese nombre del evento</label>
@@ -41,24 +48,35 @@
               rows="10"
               placeholder="Descripción"
               required
+              class="form-control"
               data-dark
             ></textarea>
           </div>
           <div class="form-group">
             <label for="dateInfo">Ingrese la fecha del evento</label>
-            <input type="date" id="dateInfo" required />
+            <input type="date" id="dateInfo" required class="form-control" />
           </div>
-          <div class="form-group"><input type="submit" value="Añadir" /></div>
+          <div class="form-group"><input type="submit" value="Añadir" class="form-control" /></div>
         </form>
       </div>
       <div class="container-dates">
         <div class="container-fluid --date" id="container-dates"></div>
       </div>
     </main>
-    <footer class="container__footer" data-dark>
+    <footer class="container-fluid" data-dark>
       <p>Realizado por:</p>
       <p><strong>CSanz</strong></p>
     </footer>
     <script src="js/main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
