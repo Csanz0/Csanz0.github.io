@@ -1,82 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="¿Tienes problemas para organizar tus fechas? Utiliza esta Aplicacion web"
-    />
-    <title>Date Task App web</title>
-    <!-- <link rel="stylesheet" href="./css/style.css" />  -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-      crossorigin="anonymous"
-    />
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="¿Tienes problemas para organizar tus fechas? Utiliza esta Aplicacion web" />
+		<title>Date Task App web</title>
+		<!-- <link rel="stylesheet" href="./css/style.css" />  -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+			integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+			crossorigin="anonymous" />
+	</head>
 
-  <body>
-    <header class="container-fluid bg-primary">
-      <div class="container">
-        <h1 class="h1">Date Task App</h1>
-      </div>
-      <div class="container-lg">
-        <button id="btn" class="btn btn-sm btn-dark">Oscuro</button>
-      </div>
-    </header>
-    <main data-dark>
-      <div class="container-fluid bg-se" data-dark>
-        <form id="dateForm">
-          <div class="form-group">
-            <label for="title">Ingrese nombre del evento</label>
-            <input
-              type="text"
-              name="event"
-              id="title"
-              placeholder="Evento"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="description">Ingrese una descripción del evento</label>
-            <textarea
-              id="description"
-              cols="20"
-              rows="10"
-              placeholder="Descripción"
-              required
-              class="form-control"
-              data-dark
-            ></textarea>
-          </div>
-          <div class="form-group">
-            <label for="dateInfo">Ingrese la fecha del evento</label>
-            <input type="date" id="dateInfo" required class="form-control" />
-          </div>
-          <div class="form-group"><input type="submit" value="Añadir" class="form-control" /></div>
-        </form>
-      </div>
-      <div class="container-dates">
-        <div class="container-fluid --date" id="container-dates"></div>
-      </div>
-    </main>
-    <footer class="container-fluid" data-dark>
-      <p>Realizado por:</p>
-      <p><strong>CSanz</strong></p>
-    </footer>
-    <script src="js/main.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+	<body class="bg-secondary text-light">
+		<header
+			class="container-fluid bg-primary d-flex justify-content-center align-items-center">
+			<div class="container">
+				<h1 class="h1 text-light">Date Task App</h1>
+			</div>
+			<div class="container">
+				<button id="btn" class="btn btn btn-dark">Oscuro</button>
+			</div>
+		</header>
+		<div
+			class="alert alert-info alert-dismissible fade z-0 m-2"
+			role="alert"
+			id="alert">
+			<strong id="text-info">Se ha añadido correctamente</strong>
+			<button
+				type="button"
+				class="close"
+				data-dismiss="alert"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<main data-dark class="container-fluid">
+			<div
+				class="container-lg h-75 bg-light my-2 rounded"
+				style="min-height: 50dvh">
+				<div class="container-fluid --date" id="container-dates"></div>
+			</div>
+			<div class="container-sm mb-5" data-dark>
+				<form id="taskForm">
+					<div class="form-group d-flex flex-column">
+						<label for="title">Ingrese nombre del evento</label>
+						<input
+							type="text"
+							name="event"
+							id="title"
+							placeholder="Evento"
+							class="form-control"
+							required />
+					</div>
+					<div class="form-group">
+						<label for="description">Ingrese una descripción del evento</label>
+						<textarea
+							id="description"
+							cols="20"
+							rows="10"
+							placeholder="Descripción"
+							required
+							class="form-control"
+							data-dark></textarea>
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Añadir" class="form-control" />
+					</div>
+				</form>
+			</div>
+		</main>
+		<footer class="container-fluid bg-primary p-2 text-capitalize" data-dark>
+			<p>Realizado por:</p>
+			<p><strong>Csc32</strong></p>
+		</footer>
+		<!-- 		<script src="js/main.js"></script> -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+			crossorigin="anonymous"></script>
+		<script>
+			const form = $("#taskForm");
+			form.submit(function (e) {
+				e.preventDefault();
+				const alert = $("#alert");
+				console.log(e.target);
+				let title = $("#title");
+				let description = $("#description");
+
+				alert.toggleClass("show");
+			});
+		</script>
+	</body>
 </html>
