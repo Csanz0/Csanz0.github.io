@@ -26,24 +26,15 @@
 				<button id="btn" class="btn btn btn-dark">Oscuro</button>
 			</div>
 		</header>
-		<div
-			class="alert alert-info alert-dismissible fade z-0 m-2"
-			role="alert"
-			id="alert">
-			<strong id="text-info">Se ha añadido correctamente</strong>
-			<button
-				type="button"
-				class="close"
-				data-dismiss="alert"
-				aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
+
 		<main data-dark class="container-fluid">
+			<div id="alert-container"></div>
 			<div
 				class="container-lg h-75 bg-light my-2 rounded"
 				style="min-height: 50dvh">
-				<div class="container-fluid --date" id="container-dates"></div>
+				<div
+					class="container-fluid row row-cols-3 d-flex justify-content-center align-items-center"
+					id="task-container"></div>
 			</div>
 			<div class="container-sm mb-5" data-dark>
 				<form id="taskForm">
@@ -91,12 +82,30 @@
 			const form = $("#taskForm");
 			form.submit(function (e) {
 				e.preventDefault();
-				const alert = $("#alert");
-				console.log(e.target);
-				let title = $("#title");
-				let description = $("#description");
+				//create new alert
+				const sucessAlert =
+					" <div class='alert alert-success alert-dismissible fade show m-2' role='alert' id='alert'> <strong id='text-info'>Se ha añadido correctamente</strong> <button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div> ";
+				$("#alert-container").append(sucessAlert);
+				let title = $("#title").val();
+				let description = $("#description").val();
+				const task = `<div class="card bg-dark m-3">
+  <div class="card-header">
+    ${title}
+  </div>
+  <div class="card-body">
+    <p class="card-text">${description}</p>
+    <a href="#" class="btn btn-light">Boton</a>
+  </div>
+</div>
+    `;
+				const taskContainer = $("#task-container");
 
-				alert.toggleClass("show");
+				if (title.length > 0 && description.length > 0) {
+					taskContainer.append(task);
+				} else {
+					const errorAlert =
+						" <div class='alert alert-error alert-dismissible fade show m-2' role='alert' id='alert'> <strong id='text-info'>Hay campos vacio, verifique</strong> <button type='button' class='close' data-dismiss='alert' aria-label='Close'> <span aria-hidden='true'>&times;</span> </button> </div> ";
+				}
 			});
 		</script>
 	</body>
